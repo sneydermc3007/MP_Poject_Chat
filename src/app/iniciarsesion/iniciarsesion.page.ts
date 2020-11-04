@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../servicios/auth.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-iniciarsesion',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IniciarsesionPage implements OnInit {
 
-  constructor() { }
+  email: string;
+  password: string;
+
+  constructor(private authService: AuthService, public router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSubmitLogin(){
+    this.authService.login(this.email, this.password).then(res => {
+      this.router.navigate(['/home']);
+    }).catch(err => alert('Los datos son incorrectos o este usuario no existe'))
   }
 
 }

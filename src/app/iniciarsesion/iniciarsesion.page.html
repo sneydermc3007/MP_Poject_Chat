@@ -1,21 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Iniciar Sesion</ion-title>
+  <ion-toolbar color="secondary">
+    <center>
+      <ion-title> INICIAR SESION UCLA</ion-title>
+    </center>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+  <img class="icon" src="assets/icon/icon_chat.jpg" alt="">
+
   <ion-item>
     <ion-label position="floating">Correo</ion-label>
-    <ion-input></ion-input>
+    <ion-input type = "text" [(ngModel)] = "email" name = "email"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Contraseña</ion-label>
-    <ion-input type = "password"></ion-input>
+    <ion-input type = "password" [(ngModel)] = "password" name = "password"></ion-input>
   </ion-item>
 
-  <ion-button expand="full">
+  <ion-button (click)="onSubmitLogin()" expand="full">
     <ion-icon slot="start" name="person-outline"></ion-icon>
     INICIAR SESION
   </ion-button>
