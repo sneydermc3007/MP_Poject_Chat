@@ -19,7 +19,7 @@ export class IniciarsesionPage implements OnInit {
 
   onSubmitLogin(){
     this.authService.login(this.email, this.password).then(res => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/messenger']);
     }).catch(err => alert('Los datos son incorrectos o este usuario no existe'))
   }
 

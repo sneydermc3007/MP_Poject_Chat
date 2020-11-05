@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { from } from 'rxjs';
+import { AuthGuard } from "./guards/auth.guard";
+import { NologinGuard } from "./guards/nologin.guard";
 
 const routes: Routes = [
   {
@@ -13,11 +16,15 @@ const routes: Routes = [
   },
   {
     path: 'iniciarsesion',
-    loadChildren: () => import('./iniciarsesion/iniciarsesion.module').then( m => m.IniciarsesionPageModule)
+    loadChildren: () => import('./iniciarsesion/iniciarsesion.module').then( m => m.IniciarsesionPageModule), canActivate: [NologinGuard]
   },
   {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'messenger',
+    loadChildren: () => import('./messenger/messenger.module').then( m => m.MessengerPageModule), canActivate: [AuthGuard]
   },
 ];
 
