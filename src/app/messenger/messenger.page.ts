@@ -14,8 +14,14 @@ export class MessengerPage implements OnInit {
 
   public chatRooms : any = [];
 
-  constructor(public authservice: AuthService, public chatservice: ChatsService,
+  constructor(
+    public authservice: AuthService,
+    public chatservice: ChatsService,
     private modal: ModalController) { }
+
+  Onlogout(){
+      this.authservice.out();
+    }
 
   ngOnInit() {
     this.chatservice.getChatRooms().subscribe(chats => {
@@ -23,15 +29,11 @@ export class MessengerPage implements OnInit {
     })
   }
 
-  Onlogout(){
-    this.authservice.out();
-  }
-
   openChat(chat){
     this.modal.create({
       component: ChatComponent,
       componentProps: {
-        name: chat.name
+        chat: chat
       }
     }).then( (modal) => modal.present())
   }

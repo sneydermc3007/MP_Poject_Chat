@@ -16,12 +16,14 @@ import { from } from 'rxjs';
 import { AngularFirestoreModule, SETTINGS } from "@angular/fire/firestore";
 import { ChatComponent } from './componentes/chat/chat.component';
 
+import { FormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [AppComponent, ChatComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  entryComponents: [ChatComponent],
+  imports: [FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule, AngularFireAuthModule],
+    AngularFireAuthModule, AngularFirestoreModule],
   providers: [
     StatusBar,
     SplashScreen,
