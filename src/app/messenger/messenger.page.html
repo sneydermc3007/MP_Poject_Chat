@@ -8,9 +8,21 @@
 
 <ion-content padding>
 
-  <ion-button (click)="Onlogout()" expand="full" fill="clear" size="small">  
-    <ion-icon name="hand-left-outline"></ion-icon>
+  <ion-list>
+      <ion-item *ngFor = "let chat of chatRooms" (click)="openChat(chat)">
+        <ion-avatar slot="start">
+          <ion-img [src]="chat.img"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <h2><center><b>{{chat.name}}</b></center></h2>
+          <p>{{chat.description}}</p>
+        </ion-label>
+      </ion-item>
+  </ion-list>
+
+  <!--ion-button (click)="Onlogout()" expand="full" fill="clear" size="small">  
+  <ion-icon name="hand-left-outline"><!/ion-icon>
     Desconectarse 
-  </ion-button>
+  </ion-button!-->
 
 </ion-content>
