@@ -1,48 +1,39 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Registro</ion-title>
+  <ion-toolbar color="secondary">
+    <center><ion-title>REGISTRO UCLA</ion-title></center>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+
+  <img class="icon" src="assets/icon/registro.jpeg" alt="">
 
   <ion-item>
-    <ion-label position="floating"> Ingrese un usuario o su correo</ion-label>
+    <ion-label position="floating">Ingrese su(s)  Nombre(s)</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating"> Ingrese su(s)  Nombre(s)</ion-label>
+    <ion-label position="floating">Ingrese su(s) Apellido(s)</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating"> Ingrese su(s) Apellido(s)</ion-label>
-    <ion-input></ion-input>
+    <ion-label position="floating">Ingrese su Email</ion-label>
+    <ion-input [(ngModel)] = "email"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating"> Ingrese su Email</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating"> Ingrese su contraseña</ion-label>
-    <ion-input type ="password"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="floating"> Verifique su contraseña</ion-label>
-    <ion-input type ="password"></ion-input>
+    <ion-label position="floating">Ingrese su contraseña</ion-label>
+    <ion-input type ="password" [(ngModel)] = "password"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label>MM DD YY</ion-label>
-    <ion-datetime displayFormat="MM DD YY" placeholder=" Elige tu fecha de nacimiento"></ion-datetime>
+    <ion-datetime displayFormat="MM DD YY"placeholder="Elige tu fecha de nacimiento"></ion-datetime>
   </ion-item>
 
-
-  <ion-button expand="full">
+  <ion-button expand="full" (click)="OnSubmitRegistrar()">
     <ion-icon slot="start" name="person-add-outline"></ion-icon>
     REGISTRO
   </ion-button>
