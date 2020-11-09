@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Sanitizer } from '@angular/core';
 import { AuthService } from "../servicios/auth.service";
-import { Router } from "@angular/router"
+import { Router } from "@angular/router";
+import { Plugins, CameraResultType, CameraSource } from "@capacitor/core";
+import {DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
+import { threadId } from 'worker_threads';
+
 
 @Component({
   selector: 'app-registro',
@@ -12,10 +16,28 @@ export class RegistroPage implements OnInit {
   public email : string;
   public password: string;
   
-
-  constructor(private auth: AuthService, private router: Router) { }
+ imagenUsuario ="assets/img/login.png"; 
+ foto: SafeResourceUrl;
+  constructor(private auth: AuthService, private router: Router, private Sanitize: DomSanitizer) { }
 
   ngOnInit() {
+  }
+
+
+
+  async tomarFoto(){
+    const imagen= await Plugins.Camera.getPhoto({
+      quality:100,
+      allowEditing: false,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera,
+
+
+    });
+
+    this.foto = this.Sanitize.bypassSecurityTrustResourceUrl(imagen && imagen.dataUrl);
+
+
   }
 
   OnSubmitRegistrar(){
