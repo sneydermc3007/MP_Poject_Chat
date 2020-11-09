@@ -17,6 +17,7 @@ import { AngularFirestoreModule, SETTINGS } from "@angular/fire/firestore";
 import { ChatComponent } from './componentes/chat/chat.component';
 
 import { FormsModule } from "@angular/forms";
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [AppComponent, ChatComponent],
@@ -25,6 +26,7 @@ import { FormsModule } from "@angular/forms";
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule, AngularFirestoreModule],
   providers: [
+    InAppBrowser,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
