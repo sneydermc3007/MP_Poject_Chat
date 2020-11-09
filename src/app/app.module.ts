@@ -18,6 +18,7 @@ import { ChatComponent } from './componentes/chat/chat.component';
 
 import { FormsModule } from "@angular/forms";
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, ChatComponent],
