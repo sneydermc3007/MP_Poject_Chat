@@ -11,6 +11,7 @@ export class RegistroPage implements OnInit {
 
   public email : string;
   public password: string;
+  public name: string;
   
 
   constructor(private auth: AuthService, private router: Router) { }
@@ -19,7 +20,7 @@ export class RegistroPage implements OnInit {
   }
 
   OnSubmitRegistrar(){
-    this.auth.registrar(this.email, this.password).then(auth => {
+    this.auth.registrar(this.email, this.password, this.name).then(auth => {
       this.router.navigate(['iniciarsesion'])
       console.log(auth)
     }).catch(err => console.log(err))
