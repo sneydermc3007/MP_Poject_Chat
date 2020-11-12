@@ -18,10 +18,7 @@ export class MessengerPage implements OnInit {
 
   public chatRooms : any = [];
 
-
-  
-  constructor( 
-    private browser: InAppBrowser,
+  constructor(private browser: InAppBrowser,
     public authservice: AuthService,
     public chatservice: ChatsService,
     private modal: ModalController,
