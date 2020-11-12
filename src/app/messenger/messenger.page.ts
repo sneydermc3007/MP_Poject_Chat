@@ -5,7 +5,6 @@ import { ModalController } from "@ionic/angular";
 import { ChatComponent } from "../componentes/chat/chat.component";
 import { ActionSheetController } from '@ionic/angular';
 import {  Geolocation  } from "@capacitor/core";
-
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
@@ -23,7 +22,7 @@ export class MessengerPage implements OnInit {
   latitud = "Pendiente";
   longitud = "Pendiente";
 
-  constructor(
+  constructor(private browser: InAppBrowser,
     public authservice: AuthService,
     public chatservice: ChatsService,
     private modal: ModalController,
