@@ -4,6 +4,7 @@ import { ChatsService, chat } from "../servicios/chats.service";
 import { ModalController } from "@ionic/angular";
 import { ChatComponent } from "../componentes/chat/chat.component";
 import { ActionSheetController } from '@ionic/angular';
+
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
@@ -17,7 +18,10 @@ export class MessengerPage implements OnInit {
 
   public chatRooms : any = [];
 
-  constructor( private browser: InAppBrowser,
+
+  
+  constructor( 
+    private browser: InAppBrowser,
     public authservice: AuthService,
     public chatservice: ChatsService,
     private modal: ModalController,
