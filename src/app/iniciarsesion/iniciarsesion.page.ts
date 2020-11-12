@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../servicios/auth.service";
 import { Router } from "@angular/router";
+import { ModalController } from "@ionic/angular";
 
 @Component({
   selector: 'app-iniciarsesion',
@@ -12,7 +13,10 @@ export class IniciarsesionPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(private authService: AuthService, public router: Router) { }
+  constructor(
+    private modal :ModalController,
+    private authService: AuthService,
+    public router: Router) { }
 
   ngOnInit() {
   }

@@ -1,15 +1,17 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="secondary">
+<ion-header  [translucent]="true">
+  <ion-toolbar class="titulo" color="secondary">
     <ion-title>
-      <center> U.C LUIS AMIGO </center>
+      <b><center> U.C LUIS AMIGO </center></b>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
+  <img class= "icon2" src="assets/icon/UCLA.jpg" alt="">
+
   <div id="container">
-    <ion-button expand="full" color="primary" [routerLink]="['/iniciarsesion']">Iniciar Sesión</ion-button>
-    <ion-button expand="full" color="secondary" [routerLink]="['/registro']">Registrarse</ion-button>
+    <ion-button expand="full" class="boton" [routerLink]="['/iniciarsesion']">INICIAR SESIÓN</ion-button>
+    <ion-button expand="full" color="secondary" class="boton" [routerLink]="['/registro']">REGISTRATE</ion-button>
   </div>
 </ion-content>
