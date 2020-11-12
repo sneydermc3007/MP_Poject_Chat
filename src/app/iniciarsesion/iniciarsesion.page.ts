@@ -3,7 +3,6 @@ import { AuthService } from "../servicios/auth.service";
 import { Router } from "@angular/router";
 import { ModalController, AlertController } from "@ionic/angular";
 
-
 @Component({
   selector: 'app-iniciarsesion',
   templateUrl: './iniciarsesion.page.html',
