@@ -12,7 +12,6 @@ import { threadId } from 'worker_threads';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
-
   public email : string;
   public password: string;
   public name: string;

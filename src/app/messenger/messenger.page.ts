@@ -19,7 +19,7 @@ export class MessengerPage implements OnInit {
   public chatRooms : any = [];
 
 
-  latitud = "Pendiente";
+   latitud = "Pendiente";
   longitud = "Pendiente";
 
   constructor(private browser: InAppBrowser,
