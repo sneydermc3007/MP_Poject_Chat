@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ChatUCL</string>
+    <string name="title_activity_main">ChatUCL</string>
+    <string name="package_name">org.chatucl.chatUCL</string>
+    <string name="custom_url_scheme">org.chatucl.chatUCL</string>
+</resources>

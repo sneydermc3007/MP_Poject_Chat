@@ -19,8 +19,8 @@ export class MessengerPage implements OnInit {
   public chatRooms : any = [];
 
 
-   latitud = "Pendiente";
-  longitud = "Pendiente";
+   latitud = "Latitud";
+  longitud = "Longitud";
 
   constructor(private browser: InAppBrowser,
     public authservice: AuthService,
