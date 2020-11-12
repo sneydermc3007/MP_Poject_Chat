@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private router:Router, private storage:Storage) {
+    this.storage.get('mostrarIntro').then((result)=> {
+
+      if(result == null){  
+
+        this.router.navigateByUrl('/slides');   
+        
+      }     
+    });
+    
+  }
 
 }
