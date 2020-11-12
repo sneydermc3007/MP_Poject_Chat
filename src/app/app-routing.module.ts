@@ -26,6 +26,11 @@ const routes: Routes = [
     path: 'messenger',
     loadChildren: () => import('./messenger/messenger.module').then( m => m.MessengerPageModule), canActivate: [AuthGuard]
   },
+  {
+    path: 'slides',
+    loadChildren: () => import('./slides/slides.module').then( m => m.SlidesPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -20,10 +20,12 @@ import { FormsModule } from "@angular/forms";
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { environment } from '../environments/environment';
 
+import {IonicStorageModule } from '@ionic/storage'
+
 @NgModule({
   declarations: [AppComponent, ChatComponent],
   entryComponents: [ChatComponent],
-  imports: [FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [FormsModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule, AngularFirestoreModule],
   providers: [

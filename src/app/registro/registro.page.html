@@ -6,7 +6,14 @@
 
 <ion-content padding class="titulo">
 
-  <img class="icon" src="assets/icon/registro.jpeg" alt="">
+  <ion-avatar   (click)="tomarFoto()"  class="border" > 
+
+    <img [src]= "imagenUsuario"  *ngIf = !foto>
+    <img [src]= "foto"  *ngIf = foto>
+
+  </ion-avatar>
+  
+  
 
   <ion-item>
     <ion-label position="floating" >Ingrese su(s)  Nombre(s)</ion-label>

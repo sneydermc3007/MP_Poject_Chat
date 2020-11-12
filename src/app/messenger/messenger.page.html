@@ -21,6 +21,11 @@
       </ion-item>
   </ion-list>
 
+
+  <ion-input [(ngModel)]= "latitud" class="center"></ion-input>
+  <ion-input [(ngModel)]= "longitud"class="center"></ion-input>
+  <ion-button (click)= "calcularPosicion()"class="centerbutton"> ¡Calcula tu ubicacion! </ion-button>
+
   <!--ion-button (click)="Onlogout()" expand="full" fill="clear" size="small">  
   <ion-icon name="hand-left-outline"></ion-icon>
     Desconectarse 

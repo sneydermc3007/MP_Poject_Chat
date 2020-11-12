@@ -4,6 +4,7 @@ import { ChatsService, chat } from "../servicios/chats.service";
 import { ModalController } from "@ionic/angular";
 import { ChatComponent } from "../componentes/chat/chat.component";
 import { ActionSheetController } from '@ionic/angular';
+import {  Geolocation  } from "@capacitor/core";
 
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
@@ -17,6 +18,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 export class MessengerPage implements OnInit {
 
   public chatRooms : any = [];
+
+
+  latitud = "Pendiente";
+  longitud = "Pendiente";
 
   constructor(
     public authservice: AuthService,
@@ -77,6 +82,14 @@ export class MessengerPage implements OnInit {
       },]
     });
     await actionSheet.present();
+  }
+
+  async calcularPosicion(){
+
+    const coordenadas = await Geolocation.getCurrentPosition();
+    this.longitud =coordenadas.coords.longitude.toString();
+    this.latitud =coordenadas.coords.latitude.toString();
+
   }
 
 }
