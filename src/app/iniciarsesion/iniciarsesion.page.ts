@@ -12,6 +12,8 @@ export class IniciarsesionPage implements OnInit {
 
   email: string;
   password: string;
+  email1:string;
+  password1:string;
 
   constructor(
     public alertController: AlertController,
