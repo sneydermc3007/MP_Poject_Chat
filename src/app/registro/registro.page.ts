@@ -3,7 +3,6 @@ import { AuthService } from "../servicios/auth.service";
 import { Router } from "@angular/router";
 import { Plugins, CameraResultType, CameraSource } from "@capacitor/core";
 import {DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
-import { threadId } from 'worker_threads';
 
 
 @Component({

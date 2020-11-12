@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../servicios/auth.service";
 import { Router } from "@angular/router";
-import { ModalController } from "@ionic/angular";
+import { ModalController, AlertController } from "@ionic/angular";
 
 @Component({
   selector: 'app-iniciarsesion',
@@ -14,6 +14,7 @@ export class IniciarsesionPage implements OnInit {
   password: string;
 
   constructor(
+    public alertController: AlertController,
     private modal :ModalController,
     private authService: AuthService,
     public router: Router) { }
@@ -21,10 +22,22 @@ export class IniciarsesionPage implements OnInit {
   ngOnInit() {
   }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Error',
+      subHeader: 'Mal ingreso de los datos',
+      message: 'Los datos colocados son invalidos.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
   onSubmitLogin(){
     this.authService.login(this.email, this.password).then(res => {
       this.router.navigate(['/messenger']);
-    }).catch(err => alert('Los datos son incorrectos o este usuario no existe'))
+    }).catch(err => this.presentAlert())
   }
 
 }
