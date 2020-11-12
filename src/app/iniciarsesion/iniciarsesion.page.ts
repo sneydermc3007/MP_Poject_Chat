@@ -22,12 +22,12 @@ export class IniciarsesionPage implements OnInit {
   ngOnInit() {
   }
 
-  async presentAlert() {
+  async presentAlert() {//INCORRECTO
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
       header: 'Error',
       subHeader: 'Mal ingreso de los datos',
-      message: 'Los datos colocados son invalidos.',
+      message: 'Los datos colocados son invalidos, gracias por su atencion.',
       buttons: ['OK']
     });
 
